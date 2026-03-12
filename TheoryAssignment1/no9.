@@ -1,0 +1,26 @@
+//9.Write a function that calculates the Greatest Common Divisor of 2 numbers.
+import java.util.Scanner;
+public class GCD {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input=new Scanner(System.in);
+		System.out.println("Enter two numbers= " );
+		int a=input.nextInt();
+		int b=input.nextInt();
+		System.out.println("GCD of two numbers= " +calculateGCD(a,b));
+		}
+	//This function calculates the Greatest Common Divisor
+	public static int calculateGCD(int a,int b)
+	{
+		int r;
+		//Repeat until remainder becomes 0
+		while(b!=0)
+		{
+			r=a%b;//find remainder
+			a=b;//replace a with b
+			b=r;//replace b with remainder
+		}
+		return a;
+	}
+}
