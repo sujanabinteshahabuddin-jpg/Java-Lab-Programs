@@ -1,0 +1,25 @@
+//1.	Enter 3 numbers from the user & make a function to print their average.
+import java.util.Scanner;
+public class Average {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Asking user to enter three numbers
+		System.out.println("enter 3 numbers=");
+		Scanner input=new Scanner(System.in);
+		
+		//Taking input from user
+		double a=input.nextDouble();
+		double b=input.nextDouble();
+		double c=input.nextDouble();
+		
+		//Calling the function to calculate average
+		avg(a,b,c);
+	}
+	    //Function to calculate and print average
+		public static void avg(double a,double b,double c) {
+			System.out.println("avg is= "+((a+b+c)/3));
+			
+		}
+
+	}
