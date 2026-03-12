@@ -1,0 +1,123 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		HotelRoom h1=new HotelRoom("A101",2000,2);
+		System.out.println("Hotel Room:");
+		h1.displayInfo();
+		System.out.println("Total price for 3 days:"+h1.calculateTotalPrice(3));
+		System.out.println("\n\n\nRegular Hotel Room:");
+		
+		RegularHotelRoom r1=new RegularHotelRoom("B202",2500,4,true,true);
+		r1.displayInfo();
+		System.out.println("Total price for 3 days:"+r1.calculateTotalPrice(3));
+		
+
+	}
+
+}
+class HotelRoom{
+	private String roomNumber;
+	private double pricePerNight;
+	private int numberOfBeds;
+	public HotelRoom()
+	{
+		
+	}
+	public HotelRoom(String roomNumber,double pricePerNight,int numberOfBeds)
+	
+	{
+		this.roomNumber=roomNumber;
+		this.pricePerNight=pricePerNight;
+		this.numberOfBeds=numberOfBeds;
+	}
+	public void setRoomNumber(String room)
+	{
+		this.roomNumber=room;
+	}
+	public String getRoomNumber()
+	{
+		return this.roomNumber;
+	}
+	public void setPricePerNight(double price)
+	{
+		this.pricePerNight=price;
+	}
+	public double getPricePerNight()
+	{
+		return this.pricePerNight;
+	}
+	public void setNumberOfBeds(int beds)
+	{
+		this.numberOfBeds=beds;
+	}
+	public int getNumberOfBeds()
+	{
+		return this.numberOfBeds;
+	}
+	public void displayInfo()
+	{
+		System.out.println("Room Number:"+this.roomNumber+"\nPrice Per Night:"+this.pricePerNight+"\nNumber of Beds:"+this.numberOfBeds);
+	}
+	public double calculateTotalPrice(int days)
+	{
+		return getPricePerNight()*days;
+	}
+}
+	class RegularHotelRoom extends HotelRoom{
+		
+		private boolean hasWifi;
+		private boolean hasAC;
+		
+	
+		public RegularHotelRoom()
+		{
+			super();
+		}
+		public RegularHotelRoom(String roomNumber,double pricePerNight,int numberOfBeds,boolean hasWifi,boolean hasAC)
+		{
+			super(roomNumber,pricePerNight,numberOfBeds);
+			this.hasWifi=hasWifi;
+			this.hasAC=hasAC;
+		}
+		public boolean getHasWifi()
+		{
+			return this.hasWifi;
+		}
+		public boolean getHasAC()
+		{
+			return this.hasAC;
+		}
+		@Override
+		public void displayInfo()
+		{
+			super.displayInfo();
+			System.out.println("Has Wifi:"+this.hasWifi+"\nHas AC:"+this.hasAC);
+		}
+		@Override
+		public double calculateTotalPrice(int days)
+		{
+			double price=super.calculateTotalPrice(days);
+			if(hasWifi && hasAC)
+			{
+				return price+(1000*days);
+			}
+			else if(hasWifi)
+			{
+				return price+(300*days);
+			}
+			else if(hasAC)
+			{
+				return price+(700*days);
+			}else
+			{
+				return price;
+			}
+		}
+	
+		
+		
+	
+	
+}
