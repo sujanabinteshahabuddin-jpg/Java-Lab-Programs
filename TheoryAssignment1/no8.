@@ -1,0 +1,26 @@
+/*8.Two numbers are entered by the user, x and n.
+Write a function to find the value of one number raised to the power of another i.e. x^n.*/
+import java.util.Scanner;
+public class PowerFunc{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input=new Scanner(System.in);
+		System.out.println("Enter base:");
+		int x=input.nextInt();
+		System.out.println("Enter exponent:");
+		int n=input.nextInt();
+		System.out.println("result is: " +raiseToPower(x,n));
+		}
+	//This function calculates x raised to the power n(x^n)
+	public static int raiseToPower(int x,int n)
+	{
+		int result=1;
+		//Multiply x, n times
+		for(int i=1;i<=n;i++)
+		{
+			 result=result*x;
+		}
+		return result;
+	}
+}
