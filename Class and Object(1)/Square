@@ -1,0 +1,50 @@
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("First Square:");
+		Square s1=new Square();
+		System.out.println("Area:"+s1.getArea()+"\nPerimeter:"+s1.getPerimeter()+"\nDiagonal:"+s1.getDiagonal());
+		System.out.println("\n\nSecond Square:");
+		Square s2=new Square(4);
+		System.out.println("Area:"+s2.getArea()+"\nPerimeter:"+s2.getPerimeter()+"\nDiagonal:"+s2.getDiagonal());
+		
+
+	}
+
+}
+class Square{
+	private double side;
+	
+	public Square()
+	{
+		side=1;
+	}
+	public Square(double side)
+	{
+		this.side=side;
+		
+	}
+	public void setSide(double side)
+	{
+		this.side=side;
+	}
+	public double getSide()
+	{
+		return this.side;
+	}
+	public double getArea()
+	{
+		return (getSide())*(getSide());
+	}
+	public double getPerimeter()
+	{
+		return 4*getSide();
+	}
+	public double getDiagonal()
+	{
+		return (getSide())*(Math.sqrt(2));
+	}
+	
+	
+}
