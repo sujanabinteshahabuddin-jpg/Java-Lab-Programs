@@ -1,0 +1,63 @@
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Book no 1:-");
+		Book b1=new Book("Darkaker Shongshar","Humyun Ahmed",230);
+		b1.displayInfo();
+		System.out.println("\n\nBook no 2:-");
+		Book b2=new Book("Opekkha","Humayun Ahmed",300);
+		b2.displayInfo();
+		System.out.println("\n\nBook no 3:-");
+		Book b3=new Book("1952","Najim Uddin",450);
+		b3.displayInfo();
+		
+
+	}
+
+}
+class Book{
+	private String title;
+	private String author;
+	private double price;
+	
+	public Book()
+	{
+		
+	}
+	public Book(String title,String author,double price)
+	{
+		this.title=title;
+		this.author=author;
+		this.price=price;
+	}
+	public void setTitle(String title)
+	{
+		this.title=title;
+	}
+	public String getTitle()
+	{
+		return this.title;
+	}
+	public void setAuthor(String author)
+	{
+		this.author=author;
+	}
+	public String getAuthor()
+	{
+		return this.author;
+	}
+	public void setPrice(double title)
+	{
+		this.price=price;
+	}
+	public double getPrice()
+	{
+		return this.price;
+	}
+	public void displayInfo()
+	{
+		System.out.println("Book Title:"+getTitle()+"\nAuthor:"+getAuthor()+"\nPrice:"+getPrice());
+	}
+	
+}
