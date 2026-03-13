@@ -1,0 +1,42 @@
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Student no 1:-");
+		Student student1=new Student();
+		
+		student1.displayStudentInfo();
+		student1.GPA=3.5;
+		
+		student1.displayStudentInfo();
+		System.out.println("\nStudent no 2:-");
+		Student student2=new Student("Sujana Binte Shahabuddin","2521006642",3.68);
+		student2.displayStudentInfo();
+				
+
+	}
+
+}
+class Student{
+	String name;
+	String ID;
+	double GPA;
+	
+	public Student()
+	{
+		name="Unknown";
+		ID="0000";
+		GPA=0.0;
+	}
+	public Student(String n,String i,double g)
+	{
+		this.name=n;
+		this.ID=i;
+		this.GPA=g;
+	}
+	public void displayStudentInfo()
+	{
+		System.out.println("Student name:"+this.name+"\nStudent ID:"+this.ID+"\nStudent CGPA:"+this.GPA);
+	}
+	
+}
